@@ -5,9 +5,24 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67CB7B0E-CCB3-4E2B-833F-1D8F05CCB583}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYo.Castle.Log4Net", "src\YoYo.Castle.Log4Net\YoYo.Castle.Log4Net.csproj", "{5ED3A730-4C2C-4904-8601-7BCEE946212A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ED3A730-4C2C-4904-8601-7BCEE946212A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED3A730-4C2C-4904-8601-7BCEE946212A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED3A730-4C2C-4904-8601-7BCEE946212A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED3A730-4C2C-4904-8601-7BCEE946212A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5ED3A730-4C2C-4904-8601-7BCEE946212A} = {67CB7B0E-CCB3-4E2B-833F-1D8F05CCB583}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9640CD94-FB8E-49E7-9D66-AE0FA2DA0F89}
