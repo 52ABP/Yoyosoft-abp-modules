@@ -24,7 +24,7 @@ paket add YoYo.Castle.Log4Net --version 3.7.2
 
 *更多配置请查看log4net官网: [log4net官方网站](http://logging.apache.org/log4net/release/manual/configuration.html)*
 
-*除写入数据与官方有略有差异,其余都与官方相同*
+*除写入数据库配置项（connectionType）与官方有略有差异,其余都与官方相同*
 
 ```xml
 
