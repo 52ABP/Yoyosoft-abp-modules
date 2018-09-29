@@ -6,4 +6,4 @@ yoyo-abp自主的所有的模块信息内容。
 
 | Package | Status  | Doc |
 | :------ | :------  | :------ |
-| YoYo.Castle.Log4Net | [![NuGet version](https://badge.fury.io/nu/YoYo.Castle.Log4Net.svg)](https://badge.fury.io/nu/YoYo.Castle.Log4Net) | [Doc](src/YoYo.Castle.Log4Net/YoYo.Castle.Log4Net.md) |
+| YoYo.Castle.Log4Net | [![NuGet version](https://badge.fury.io/nu/YoYo.Castle.Log4Net.svg)](https://badge.fury.io/nu/YoYo.Castle.Log4Net) | [Doc](src/YoYo.Castle.Log4Net/README.md) |
