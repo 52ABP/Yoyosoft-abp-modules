@@ -11,7 +11,9 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <RootNamespace>YoYo</RootNamespace>
-    <Description>YoYo.Castle.Log4Net</Description>
+    <Description>YoYo.Castle.Log4Net,支持数据库存储</Description>
+    <Version>3.7.2</Version>
+    <PackageProjectUrl>https://github.com/52ABP/yoyo-abp-modules/tree/master/src/YoYo.Castle.Log4Net</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
