@@ -131,26 +131,21 @@ namespace YoYo
         /// (关于 UseYoYoSenparc() 的更多用法见 CO2NET Demo 中的 UseSenparcGlobal：https://github.com/Senparc/Senparc.CO2NET/blob/master/Sample/Senparc.CO2NET.Sample.netcore/Startup.cs)
         /// </summary>
         /// <param name="senparcSetting"></param>
+        /// <param name="contentRootPath">提供网站根目录(env.ContentRootPath,env类型为IHostingEnvironment)</param>
         /// <param name="autoScanExtensionCacheStrategies">是否自动扫描全局的扩展缓存(会增加系统启动时间)</param>
         /// <param name="extensionCacheStrategiesFunc">
         /// <para>需要手动注册的扩展缓存策略</para>
         /// <para>（LocalContainerCacheStrategy、RedisContainerCacheStrategy、MemcacheContainerCacheStrategy已经自动注册），</para>
         /// <para>如果设置为 null（注意：不是委托返回 null，是整个委托参数为 null），则自动使用反射扫描所有可能存在的扩展缓存策略</para>
         /// </param>
-        /// <param name="contentRootPath">提供网站根目录(env.ContentRootPath,env类型为IHostingEnvironment)</param>
         /// <returns></returns>
-        public static IRegisterService UseYoYoSenparcCO2NET(this SenparcSetting senparcSetting,
+        public static IRegisterService UseYoYoSenparcCO2NET(
+            this SenparcSetting senparcSetting,
+            string contentRootPath = "",
             bool autoScanExtensionCacheStrategies = false,
-            Func<IList<IDomainExtensionCacheStrategy>> extensionCacheStrategiesFunc = null,
-            string contentRootPath = "")
+            Func<IList<IDomainExtensionCacheStrategy>> extensionCacheStrategiesFunc = null)
         {
-            // 提供网站根目录
-            if (!string.IsNullOrWhiteSpace(contentRootPath))
-            {
-                Senparc.CO2NET.Config.RootDictionaryPath = contentRootPath;
-            }
-
-            var registerService = RegisterService.Start(senparcSetting);
+            var registerService = YoYoSenparcRegisterService.Start(senparcSetting, contentRootPath);
 
             CacheStrategyDomainWarehouse.AutoScanDomainCacheStrategy(autoScanExtensionCacheStrategies, extensionCacheStrategiesFunc);
 
