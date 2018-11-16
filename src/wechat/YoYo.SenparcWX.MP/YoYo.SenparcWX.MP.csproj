@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>YoYo.SenparcWX.MP</AssemblyName>
+    <PackageId>YoYo.SenparcWX.MP</PackageId>
+    <PackageTags>asp.net core;asp.net core mvc;boilerplate;application framework;web framework;framework;domain driven design;senparc;wechat;yoyo;</PackageTags>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <RootNamespace>YoYo</RootNamespace>
+    <Description>YoYo.SenparcWX.MP 盛派微信SDK</Description>
+    <Version>3.7.2</Version>
+    <PackageProjectUrl>https://github.com/52ABP/yoyo-abp-modules/tree/master/src/wechat/YoYo.SenparcWX.MP</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>C:\Z_D\Develop\52ABP\yoyo-abp-modules\src\wechat\YoYo.SenparcWX.MP\YoYo.SenparcWX.MP.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="3.7.2" />
+    <PackageReference Include="Senparc.Weixin.MP" Version="16.4.11" />
+    <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.1.11" />
+  </ItemGroup>
+
+</Project>
