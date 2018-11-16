@@ -13,6 +13,7 @@
             <summary>
             注册第三方平台信息
             </summary>
+            <param name="registerService"></param>
             <param name="componentAppId"></param>
             <param name="componentAppSecret"></param>
             <param name="getComponentVerifyTicketFunc">获取ComponentVerifyTicket的方法</param>
@@ -25,9 +26,12 @@
             <summary>
             根据 SenparcWeixinSetting 自动注册第三方平台信息
             </summary>
-            <param name="registerService">RegisterService</param>
-            <param name="ISenparcWeixinSettingForOpen">SenparcWeixinSetting</param>
-            <param name="name">统一标识，如果为null，则使用 SenparcWeixinSetting.ItemKey </param>
+            <param name="registerService"></param>
+            <param name="weixinSettingForOpen">SenparcWeixinSetting</param>
+            <param name="getComponentVerifyTicketFunc"></param>
+            <param name="getAuthorizerRefreshTokenFunc"></param>
+            <param name="authorizerTokenRefreshedFunc"></param>
+            <param name="name">统一标识，如果为null，则使用 SenparcWeixinSetting.ItemKey</param>
             <returns></returns>
         </member>
         <member name="T:YoYo.YoYoSenparcWXOpenModule">

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Z_D\Develop\52ABP\yoyo-abp-modules\YoYo.SenparcWX\YoYo.SenparcWX.xml</DocumentationFile>
+    <DocumentationFile>C:\Z_D\Develop\52ABP\yoyo-abp-modules\src\wechat\YoYo.SenparcWX\YoYo.SenparcWX.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
