@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YoYo.SenparcWX.Open</name>
+    </assembly>
+    <members>
+        <member name="T:YoYo.YoYoSenparcWXOpenExtensions">
+            <summary>
+            YoYo Soft 对 Senparc.Weixin.Open 的扩展
+            </summary>
+        </member>
+        <member name="M:YoYo.YoYoSenparcWXOpenExtensions.UseYoYoSenparcOpenComponent(Senparc.CO2NET.RegisterServices.IRegisterService,System.String,System.String,System.Func{System.String,System.String},System.Func{System.String,System.String,System.String},System.Action{System.String,System.String,Senparc.Weixin.Open.ComponentAPIs.RefreshAuthorizerTokenResult},System.String)">
+            <summary>
+            注册第三方平台信息
+            </summary>
+            <param name="componentAppId"></param>
+            <param name="componentAppSecret"></param>
+            <param name="getComponentVerifyTicketFunc">获取ComponentVerifyTicket的方法</param>
+            <param name="getAuthorizerRefreshTokenFunc">从数据库中获取已存的AuthorizerAccessToken的方法</param>
+            <param name="authorizerTokenRefreshedFunc">AuthorizerAccessToken更新后的回调</param>
+            <param name="name">标记名称（如开放平台名称），帮助管理员识别</param>
+            <returns></returns>
+        </member>
+        <member name="M:YoYo.YoYoSenparcWXOpenExtensions.UseYoYoSenparcOpenComponent(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForOpen,System.Func{System.String,System.String},System.Func{System.String,System.String,System.String},System.Action{System.String,System.String,Senparc.Weixin.Open.ComponentAPIs.RefreshAuthorizerTokenResult},System.String)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册第三方平台信息
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="ISenparcWeixinSettingForOpen">SenparcWeixinSetting</param>
+            <param name="name">统一标识，如果为null，则使用 SenparcWeixinSetting.ItemKey </param>
+            <returns></returns>
+        </member>
+        <member name="T:YoYo.YoYoSenparcWXOpenModule">
+            <summary>
+            YoYo Soft Senparc.WeiXin.Open  Module
+            </summary>
+        </member>
+    </members>
+</doc>

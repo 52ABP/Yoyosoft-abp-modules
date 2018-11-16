@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>YoYo</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Z_D\Develop\52ABP\yoyo-abp-modules\src\wechat\YoYo.SenparcWX.WxOpen\YoYo.SenparcWX.WxOpen.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="3.7.2" />
+    <PackageReference Include="Senparc.Weixin.WxOpen" Version="3.1.17" />
+  </ItemGroup>
+
+</Project>

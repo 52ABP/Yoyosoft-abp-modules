@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>YoYo</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Z_D\Develop\52ABP\yoyo-abp-modules\YoYo.SenparcWX\YoYo.SenparcWX.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="3.7.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.0" />
+    <PackageReference Include="Senparc.CO2NET" Version="0.2.16" />
+    <PackageReference Include="Senparc.Weixin" Version="6.1.11" />
+    <PackageReference Include="Senparc.Weixin.Cache.Redis" Version="2.2.1" />
+  </ItemGroup>
+
+</Project>
