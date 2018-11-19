@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>YoYo.SenparcWX.Work</AssemblyName>
+    <PackageId>YoYo.SenparcWX.Work</PackageId>
+    <PackageTags>asp.net core;asp.net core mvc;boilerplate;application framework;web framework;framework;domain driven design;senparc;wechat;yoyo;</PackageTags>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <RootNamespace>YoYo</RootNamespace>
+    <Description>YoYo.SenparcWX 盛派微信SDK</Description>
+    <Version>3.7.2</Version>
+    <PackageProjectUrl>https://github.com/52ABP/yoyo-abp-modules/tree/master/src/wechat/YoYo.SenparcWX.Work</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>C:\Z_D\Develop\52ABP\yoyo-abp-modules\src\wechat\YoYo.SenparcWX.Work\YoYo.SenparcWX.Work.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="3.7.2" />
+    <PackageReference Include="Senparc.Weixin.Work" Version="3.1.18" />
+  </ItemGroup>
+
+</Project>
