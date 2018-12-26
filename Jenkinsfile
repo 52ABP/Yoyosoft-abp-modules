@@ -9,6 +9,7 @@ pipeline {
 	
 	stages {
 		stage('Build') {
+			when{branch "master"}
 			steps {
 				sh 'dotnet build'
 			}
