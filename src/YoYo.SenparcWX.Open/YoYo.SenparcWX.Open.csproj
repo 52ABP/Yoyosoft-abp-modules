@@ -21,8 +21,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="3.7.2" />
-    <PackageReference Include="Senparc.Weixin.Open" Version="4.1.16" />
+    <PackageReference Include="Abp" Version="4.0.2" />
+    <PackageReference Include="Senparc.Weixin.Open" Version="4.2.1" />
   </ItemGroup>
 
 </Project>
