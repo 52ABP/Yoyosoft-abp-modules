@@ -30,6 +30,7 @@ namespace YoYo
             MpInfoContainer<UserKeyType, TenantKeyType>.Register(key, appId, appSecret, token, encodingAESKey, name, userId, tenantId);
             AccessTokenContainer.Register(appId, appSecret, name);
             JsApiTicketContainer.Register(appId, appSecret, name);
+            OAuthAccessTokenContainer.Register(appId, appSecret, name);
             WxCardApiTicketContainer.Register(appId, appSecret, name);
         }
 
@@ -112,6 +113,30 @@ namespace YoYo
         public static async Task<string> GetWxCardApiTicketAsync(string appId, bool getNewTicket = false)
         {
             return await WxCardApiTicketContainer.GetWxCardApiTicketAsync(appId, getNewTicket);
+        }
+
+        /// <summary>
+        /// 获取可用Ticket
+        /// </summary>
+        /// <param name="appId">公众号AppId</param>
+        /// <param name="code">code作为换取access_token的票据，每次用户授权带上的code将不一样，code只能使用一次，5分钟未被使用自动过期。</param>
+        /// <param name="getNewToken">是否强制重新获取新的Token</param>
+        /// <returns></returns>
+        public static string GetOAuthAccessToken(string appId, string code, bool getNewToken)
+        {
+            return OAuthAccessTokenContainer.GetOAuthAccessToken(appId, code, getNewToken);
+        }
+
+        /// <summary>
+        /// 获取可用Ticket(异步)
+        /// </summary>
+        /// <param name="appId">公众号AppId</param>
+        /// <param name="code">code作为换取access_token的票据，每次用户授权带上的code将不一样，code只能使用一次，5分钟未被使用自动过期。</param>
+        /// <param name="getNewToken">是否强制重新获取新的Token</param>
+        /// <returns></returns>
+        public static async Task<string> GetOAuthAccessTokenAsync(string appId, string code, bool getNewToken)
+        {
+            return await OAuthAccessTokenContainer.GetOAuthAccessTokenAsync(appId, code, getNewToken);
         }
     }
 }
