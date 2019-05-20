@@ -10,5 +10,9 @@ namespace YoYo
     [DependsOn(typeof(AbpKernelModule))]
     public class YoYoSenparcWXMPModule : AbpModule
     {
+
+
+
+
     }
 }
