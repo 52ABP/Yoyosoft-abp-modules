@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="4.0.2" />
+    <PackageReference Include="Abp" Version="4.5.0" />
     <PackageReference Include="E.Log4net" Version="2.1.1" />
     <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3">
       <PrivateAssets>all</PrivateAssets>
