@@ -12,7 +12,7 @@
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <RootNamespace>YoYo</RootNamespace>
     <Description>YoYo.SenparcWX 盛派微信SDK</Description>
-    <Version>3.7.2</Version>
+    <Version>3.8.0</Version>
     <PackageProjectUrl>https://github.com/52ABP/yoyo-abp-modules/tree/master/src/wechat/YoYo.SenparcWX</PackageProjectUrl>
   </PropertyGroup>
 
