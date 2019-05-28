@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		nupkg\pack_demo.ps1 = nupkg\pack_demo.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ali", "ali", "{2638BE6B-36FE-4D82-93E7-FED7C29DD663}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoYo.Alipay", "src\YoYo.Alipay\YoYo.Alipay.csproj", "{BB88992E-12E5-419D-A5BA-20645EE86AA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +62,10 @@ Global
 		{BA3DFF16-F200-41D7-AD61-80A6126A847D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA3DFF16-F200-41D7-AD61-80A6126A847D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA3DFF16-F200-41D7-AD61-80A6126A847D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB88992E-12E5-419D-A5BA-20645EE86AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB88992E-12E5-419D-A5BA-20645EE86AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB88992E-12E5-419D-A5BA-20645EE86AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB88992E-12E5-419D-A5BA-20645EE86AA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,7 @@ Global
 		{D0C1FBC8-20B2-4FF5-82D4-0E6D3DE0BA94} = {0CB8EEE8-64F4-4A96-96DE-46BB6A3790D1}
 		{CC23D22D-2DE0-4D44-A1A2-6FB449390599} = {0CB8EEE8-64F4-4A96-96DE-46BB6A3790D1}
 		{BA3DFF16-F200-41D7-AD61-80A6126A847D} = {0CB8EEE8-64F4-4A96-96DE-46BB6A3790D1}
+		{BB88992E-12E5-419D-A5BA-20645EE86AA1} = {2638BE6B-36FE-4D82-93E7-FED7C29DD663}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9640CD94-FB8E-49E7-9D66-AE0FA2DA0F89}
