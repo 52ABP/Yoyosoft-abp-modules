@@ -1,4 +1,4 @@
-﻿using Senparc.CO2NET;
+using Senparc.CO2NET;
 using Senparc.CO2NET.RegisterServices;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ namespace YoYo
     /// <summary>
     /// 快捷注册类，YoYoSoft 实现的 IRegisterService
     /// </summary>
-    public class YoYoSenparcRegisterService : IRegisterService
+    public class YoyoAbpWechatRegisterService : IRegisterService
     {
-        private YoYoSenparcRegisterService(SenparcSetting senparcSetting)
+        private YoyoAbpWechatRegisterService(SenparcSetting senparcSetting)
         {
             Config.SenparcSetting = (senparcSetting ?? new SenparcSetting());
         }
@@ -28,7 +28,7 @@ namespace YoYo
             {
                 Config.RootDictionaryPath = contentRootPath;
             }
-            var registerService = new YoYoSenparcRegisterService(senparcSetting);
+            var registerService = new YoyoAbpWechatRegisterService(senparcSetting);
             registerService.RegisterThreads();
             return registerService;
         }

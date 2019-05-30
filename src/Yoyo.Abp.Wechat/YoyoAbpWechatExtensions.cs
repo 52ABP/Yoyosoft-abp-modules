@@ -144,7 +144,7 @@ namespace YoYo
             bool autoScanExtensionCacheStrategies = false,
             Func<IList<IDomainExtensionCacheStrategy>> extensionCacheStrategiesFunc = null)
         {
-            var registerService = YoYoSenparcRegisterService.Start(senparcSetting, contentRootPath);
+            var registerService = YoyoAbpWechatRegisterService.Start(senparcSetting, contentRootPath);
 
             CacheStrategyDomainWarehouse.AutoScanDomainCacheStrategy(autoScanExtensionCacheStrategies, extensionCacheStrategiesFunc);
 
