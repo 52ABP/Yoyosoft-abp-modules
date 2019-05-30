@@ -90,8 +90,8 @@ public class ABPCommunityWebCoreModule : AbpModule
 ### API说明
 *注意:详情请查看api xml提示信息*
 
-函数名称 | 用途 | 附加说明 
-- | :-: | :-: | :-: | -:
+函数名称 | 用途 | 附加说明 |
+| :-: | :-: | :-: | 
 FTFPay | 面对面支付 | 支持轮询和异步通知两种方式
 FTFQuery | 面对面支付查询支付结果|  
 WebPay | PC Web支付|  
