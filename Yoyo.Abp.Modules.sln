@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D2C50266-893
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yoyo.Abp.Alipay", "src\Yoyo.Abp.Alipay\Yoyo.Abp.Alipay.csproj", "{ED7FA409-3AEC-4BBD-B1DA-EE13DB154D61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yoyo.Abp.Wechat", "src\Yoyo.Abp.Wechat\Yoyo.Abp.Wechat.csproj", "{22615E3F-DB2F-467B-86E6-D20A5489A4A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{ED7FA409-3AEC-4BBD-B1DA-EE13DB154D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED7FA409-3AEC-4BBD-B1DA-EE13DB154D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED7FA409-3AEC-4BBD-B1DA-EE13DB154D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22615E3F-DB2F-467B-86E6-D20A5489A4A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22615E3F-DB2F-467B-86E6-D20A5489A4A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22615E3F-DB2F-467B-86E6-D20A5489A4A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22615E3F-DB2F-467B-86E6-D20A5489A4A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ED7FA409-3AEC-4BBD-B1DA-EE13DB154D61} = {D2C50266-8938-4907-A5F3-CB0562FFBD1B}
+		{22615E3F-DB2F-467B-86E6-D20A5489A4A8} = {D2C50266-8938-4907-A5F3-CB0562FFBD1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4298007-FD29-4B62-B625-F7D7C6BE2BC7}
