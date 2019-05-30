@@ -90,24 +90,17 @@ public class ABPCommunityWebCoreModule : AbpModule
 ### API说明
 *注意:详情请查看api xml提示信息*
 
-* `_alipayHelper.FTFPay `
-    面对面支付，支持轮询和异步通知两种方式
-* `_alipayHelper.FTFQuery` 
-    面对面支付查询支付结果
-* `_alipayHelper.WebPay`
-    PC Web支付
-* `_alipayHelper.WapPay`
-    手机 Web支付
-* `_alipayHelper.Query`
-    订单查询
-* `_alipayHelper.Refund` 
-    订单退款
-* `_alipayHelper.RefundQuery`
-    订单退款查询
-* `_alipayHelper.OrderClose` 
-    关闭订单
-* `_alipayHelper.PayRequestCheck` 
-    支付结果校验,在支付同步回调中 或 支付异步回调通知校验支付结果信息
+函数名称 | 用途 | 附加说明 
+- | :-: | :-: | :-: | -:
+FTFPay | 面对面支付 | 支持轮询和异步通知两种方式
+FTFQuery | 面对面支付查询支付结果|  
+WebPay | PC Web支付|  
+WapPay | 手机 Web支付|  
+Query | 订单查询|  
+Refund | 订单退款|  
+RefundQuery | 订单退款查询|  
+OrderClose | 关闭订单|  
+PayRequestCheck | 支付结果校验| 在支付同步回调中 或 支付异步回调通知校验支付结果信息 
 
 
 ## 相关资源
