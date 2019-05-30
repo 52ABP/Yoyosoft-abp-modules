@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace YoYo
+namespace Yoyo.Abp
 {
     /// <summary>
     /// 快捷注册类，YoYoSoft 实现的 IRegisterService

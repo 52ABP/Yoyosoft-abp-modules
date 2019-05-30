@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Senparc.Weixin.Cache.Redis;
 using Senparc.Weixin;
 
-namespace YoYo
+namespace Yoyo.Abp
 {
     /// <summary>
     /// YoYo Soft 对 Senparc.Weixin、CO2NET、Redis 的扩展

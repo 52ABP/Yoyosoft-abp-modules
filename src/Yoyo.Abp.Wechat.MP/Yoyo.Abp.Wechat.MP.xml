@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yoyo.Abp.Wechat.MP</name>
+    </assembly>
+    <members>
+        <member name="T:Yoyo.Abp.Containers.MpInfoContainer`2">
+            <summary>
+            公众号信息Container
+            </summary>
+            <typeparam name="UserKeyType">用户唯一Id类型</typeparam>
+            <typeparam name="TenantKeyType">租户唯一Id类型</typeparam>
+        </member>
+        <member name="F:Yoyo.Abp.Containers.MpInfoContainer`2.REGIEST_LIST">
+            <summary>
+            存储注册列表的KEY
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.Containers.MpInfoContainer`2.Register(System.String,System.String,System.String,System.String,System.String,System.String,`0,`1)">
+            <summary>
+            注册公众号信息
+            </summary>
+            <param name="key">获取公众号信息Key</param>
+            <param name="appId">公众号AppId</param>
+            <param name="appSecret">公众号AppSecret</param>
+            <param name="token">公众号Token</param>
+            <param name="encodingAESKey">公众号EncodingAESKey</param>
+            <param name="name">公众号名称</param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+        </member>
+        <member name="M:Yoyo.Abp.Containers.MpInfoContainer`2.TryGetMpInfo(System.String)">
+            <summary>
+            获取指定公众号信息
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.Containers.MpInfoContainer`2.GetAll(`0,`1)">
+            <summary>
+            获取所有注册信息
+            </summary>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.Containers.MpInfoContainer`2.RemoveFromCache(System.String,`0,`1)">
+            <summary>
+            从缓存中删除指定项
+            </summary>
+            <param name="shortKey">获取公众号信息Key</param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+        </member>
+        <member name="M:Yoyo.Abp.Containers.MpInfoContainer`2.RemoveFromCache(System.String)">
+            <summary>
+            从缓存中删除指定项
+            </summary>
+            <param name="shortKey">获取公众号信息Key</param>
+        </member>
+        <member name="T:Yoyo.Abp.Containers.MpInfoContainer">
+            <summary>
+            公众号信息Container
+            </summary>
+        </member>
+        <member name="T:Yoyo.Abp.Containers.MpInfoBag">
+            <summary>
+            公众号信息Bag
+            </summary>
+        </member>
+        <member name="P:Yoyo.Abp.Containers.MpInfoBag.AppId">
+            <summary>
+            AppId
+            </summary>
+        </member>
+        <member name="P:Yoyo.Abp.Containers.MpInfoBag.AppSecret">
+            <summary>
+            AppSecret
+            </summary>
+        </member>
+        <member name="P:Yoyo.Abp.Containers.MpInfoBag.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:Yoyo.Abp.Containers.MpInfoBag.EncodingAESKey">
+            <summary>
+            EncodingAESKey
+            </summary>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatMP">
+            <summary>
+            公众号操作
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.RegisterMpAccount``2(System.String,System.String,System.String,System.String,System.String,System.String,``0,``1)">
+            <summary>
+            注册公众号
+            </summary>
+            <typeparam name="UserKeyType">用户唯一Id类型</typeparam>
+            <typeparam name="TenantKeyType">租户唯一Id类型</typeparam>
+            <param name="key">获取公众号信息Key</param>
+            <param name="appId">公众号AppId</param>
+            <param name="appSecret">公众号AppSecret</param>
+            <param name="token">公众号Token</param>
+            <param name="encodingAESKey">公众号EncodingAESKey</param>
+            <param name="name">公众号名称</param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.RegisterMpAccount(System.String,System.String,System.String,System.String,System.String,System.String,System.Int64,System.Int64)">
+            <summary>
+            注册公众号
+            </summary>
+            <param name="key">获取公众号信息Key</param>
+            <param name="appId">公众号AppId</param>
+            <param name="appSecret">公众号AppSecret</param>
+            <param name="token">公众号Token</param>
+            <param name="encodingAESKey">公众号EncodingAESKey</param>
+            <param name="name">公众号名称</param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.GetAccessToken(System.String,System.Boolean)">
+            <summary>
+            获取AccessToken
+            </summary>
+            <param name="appId">公众号AppId</param>
+            <param name="getNewToken">是否强制重新获取新的Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.GetAccessTokenAsync(System.String,System.Boolean)">
+            <summary>
+            获取AccessToken（异步）
+            </summary>
+            <param name="appId">公众号AppId</param>
+            <param name="getNewToken">是否强制重新获取新的Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.GetJsApiTicket(System.String,System.Boolean)">
+            <summary>
+            获取可用JsApiTicket
+            </summary>
+            <param name="appId">公众号AppId</param>
+            <param name="getNewTicket">是否强制重新获取新的Ticket</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.GetJsApiTicketAsync(System.String,System.Boolean)">
+            <summary>
+            获取可用JsApiTicket(异步)
+            </summary>
+            <param name="appId">公众号AppId</param>
+            <param name="getNewTicket">是否强制重新获取新的Ticket</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.GetWxCardApiTicket(System.String,System.Boolean)">
+            <summary>
+            获取可用CardApiTicket
+            </summary>
+            <param name="appId">公众号AppId</param>
+            <param name="getNewTicket">是否强制重新获取新的Ticket</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMP.GetWxCardApiTicketAsync(System.String,System.Boolean)">
+            <summary>
+            获取可用CardApiTicket(异步)
+            </summary>
+            <param name="appId">公众号AppId</param>
+            <param name="getNewTicket">是否强制重新获取新的Ticket</param>
+            <returns></returns>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatMPExtensions">
+            <summary>
+            YoYo Soft 对 Senparc.Weixin.MP 的扩展
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMPExtensions.UseYoYoSenparcMpAccount``2(Senparc.CO2NET.RegisterServices.IRegisterService,System.String,System.String,System.String,System.String,System.String,System.String,``0,``1)">
+            <summary>
+            注册公众号（或小程序）信息
+            </summary>
+            <typeparam name="UserKeyType">用户唯一Id类型</typeparam>
+            <typeparam name="TenantKeyType">租户唯一Id类型</typeparam>
+            <param name="registerService">RegisterService</param>
+            <param name="appId">微信公众号后台的【开发】>【基本配置】中的“AppID(应用ID)”</param>
+            <param name="appSecret">微信公众号后台的【开发】>【基本配置】中的“AppSecret(应用密钥)”</param>
+            <param name="name">标记AccessToken名称（如微信公众号名称），帮助管理员识别</param>
+            <param name="token">token</param>
+            <param name="encodingAESKey">encodingAESKey</param>
+            <param name="key">获取公众号信息Key</param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMPExtensions.UseYoYoSenparcMpAccount(Senparc.CO2NET.RegisterServices.IRegisterService,System.String,System.String,System.String,System.String,System.String,System.String,System.Int64,System.Int64)">
+            <summary>
+            注册公众号（或小程序）信息
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="appId">微信公众号后台的【开发】>【基本配置】中的“AppID(应用ID)”</param>
+            <param name="appSecret">微信公众号后台的【开发】>【基本配置】中的“AppSecret(应用密钥)”</param>
+            <param name="name">标记AccessToken名称（如微信公众号名称），帮助管理员识别</param>
+            <param name="token">token</param>
+            <param name="encodingAESKey">encodingAESKey</param>
+            <param name="key">获取公众号信息Key</param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMPExtensions.UseYoYoSenparcMpAccount``2(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForMP,System.String,System.String,System.String,System.String,``0,``1)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册公众号信息（包括JsApi）
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForMP">SenparcWeixinSetting</param>
+            <param name="token">token</param>
+            <param name="encodingAESKey">encodingAESKey</param>
+            <param name="key">获取公众号信息Key</param>
+            <param name="name">统一标识，如果为null，则使用 weixinSettingForMP.ItemKey </param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMPExtensions.UseYoYoSenparcMpAccount(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForMP,System.String,System.String,System.String,System.String,System.Int64,System.Int64)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册公众号信息（包括JsApi）
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForMP">SenparcWeixinSetting</param>
+            <param name="token">token</param>
+            <param name="encodingAESKey">encodingAESKey</param>
+            <param name="key">获取公众号信息Key</param>
+            <param name="name">统一标识，如果为null，则使用 weixinSettingForMP.ItemKey </param>
+            <param name="userId">用户Id</param>
+            <param name="tenantId">租户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatMPExtensions.UseYoYoSenparcMpJsApiTicket(Senparc.CO2NET.RegisterServices.IRegisterService,System.String,System.String,System.String)">
+            <summary>
+            注册公众号（或小程序）的JSApi（RegisterMpAccount注册过程中已包含）
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="appId">微信公众号后台的【开发】>【基本配置】中的“AppID(应用ID)”</param>
+            <param name="appSecret">微信公众号后台的【开发】>【基本配置】中的“AppSecret(应用密钥)”</param>
+            <param name="name">标记AccessToken名称（如微信公众号名称），帮助管理员识别</param>
+            <returns></returns>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatMPModule">
+            <summary>
+            YoYo Soft Senparc.WeiXin.MP  Module
+            </summary>
+        </member>
+    </members>
+</doc>
