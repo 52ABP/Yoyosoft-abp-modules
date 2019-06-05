@@ -14,4 +14,10 @@
     <PackageReference Include="Senparc.Weixin.MP" Version="16.6.11" />
     <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.2.5" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Yoyo.Abp.Wechat.MP.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

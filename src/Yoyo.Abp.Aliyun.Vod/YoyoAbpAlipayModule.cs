@@ -4,14 +4,14 @@ using Abp.Reflection.Extensions;
 namespace Yoyo.Abp
 {
     /// <summary>
-    /// YoyoSoft Abp 支付宝模块
+    /// YoyoSoft Abp 阿里云VOD模块
     /// </summary>
-    public class YoyoAbpAlipayModule : AbpModule
+    public class YoyoAbpAliyunVodModule : AbpModule
     {
 
         public override void Initialize()
         {
-            var thisAssembly = typeof(YoyoAbpAlipayModule).GetAssembly();
+            var thisAssembly = typeof(YoyoAbpAliyunVodModule).GetAssembly();
 
             IocManager.RegisterAssemblyByConvention(thisAssembly);
         }

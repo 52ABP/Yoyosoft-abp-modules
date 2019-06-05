@@ -31,7 +31,7 @@ namespace Yoyo.Abp
         /// <returns></returns>
         public static IServiceCollection AddYoYoSenparc(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            return serviceCollection.AddYoYoSenparcCO2NET(configuration)
+            return serviceCollection.AddYoYoSenparcCo2Net(configuration)
                                     .AddYoYoSenparcWeixin(configuration);
         }
 
@@ -42,9 +42,10 @@ namespace Yoyo.Abp
         /// <param name="serviceCollection"></param>
         /// <param name="configuration"></param>
         /// <returns></returns>
-        public static IServiceCollection AddYoYoSenparcCO2NET(this IServiceCollection serviceCollection, IConfiguration configuration)
+        public static IServiceCollection AddYoYoSenparcCo2Net(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             SenparcDI.GlobalServiceCollection = serviceCollection;
+
             serviceCollection.Configure<SenparcSetting>(configuration.GetSection("SenparcSetting"));
 
             /*

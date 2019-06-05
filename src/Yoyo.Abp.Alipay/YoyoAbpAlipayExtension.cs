@@ -14,7 +14,7 @@ namespace Yoyo.Abp
         /// </summary>
         /// <param name="services"></param>
         /// <param name="alipayOptionsCreateFunc">支付配置信息创建函数</param>
-        /// <param name="ftfConfigCreateFunc">面对面支付基本信息创建函数</param>
+        /// <param name="ftfConfigCreateAction">面对面支付基本信息创建函数</param>
         /// <returns></returns>
         public static IServiceCollection AddYoYoAlipay(this IServiceCollection services, 
             Func<AlipayOptions> alipayOptionsCreateFunc, 

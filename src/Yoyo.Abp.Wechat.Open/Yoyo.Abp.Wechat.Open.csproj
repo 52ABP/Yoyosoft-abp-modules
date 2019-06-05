@@ -14,4 +14,10 @@
     <PackageReference Include="Senparc.Weixin.Open" Version="4.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Yoyo.Abp.Wechat.Open.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
