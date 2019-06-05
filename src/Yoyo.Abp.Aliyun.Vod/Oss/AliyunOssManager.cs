@@ -38,6 +38,7 @@ namespace Yoyo.Abp.Oss
         /// 
         /// </summary>
         /// &lt;param name="fileName"&gt;文件名称，包含后缀名称&lt;/param&gt;
+        /// <param name="fileName"></param>
         /// <param name="fileToUpload"></param>
         /// <returns></returns>
         public static OssFileData UpLoad(string fileName, Stream fileToUpload)

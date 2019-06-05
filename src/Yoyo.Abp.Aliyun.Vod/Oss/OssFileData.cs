@@ -1,4 +1,4 @@
-﻿namespace Yoyo.Abp.Configuration
+﻿namespace Yoyo.Abp.Oss
 {
     public class OssFileData
     {
