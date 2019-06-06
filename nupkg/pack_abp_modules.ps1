@@ -1,7 +1,16 @@
 # Paths
 $packFolder = (Get-Item -Path "./" -Verbose).FullName
-#鑾峰彇鍒板綋鍓嶆枃浠跺す璺緞
+#获取项目路径信息
 
+
+Write-Host "Generating Build Number"
+$baseDate = [datetime]"01/01/2000"
+$currentDate = $(Get-Date)
+$interval = NEW-TIMESPAN –Start $baseDate –End $currentDate
+$days = $interval.Days
+$minutes=$interval.Minutes
+$version="1.0.$days.$minutes"
+Write-Host "$version"
 
 
 $slnPath = Join-Path $packFolder "../"
@@ -9,13 +18,14 @@ $srcPath = Join-Path $slnPath "src"
 
 # List of projects
 $projects = (
-    "YoYo.Castle.Log4Net",    
-    "YoYo.SenparcWX",    
-    "YoYo.SenparcWX.MP",    
-    "YoYo.SenparcWX.OPEN",    
-    "YoYo.SenparcWX.TenPay",    
-    "YoYo.SenparcWX.Work",    
-    "YoYo.SenparcWX.WxOpen"   
+    "Yoyo.Abp.Alipay",    
+    "Yoyo.Abp.Aliyun.Vod",    
+    "Yoyo.Abp.Wechat",    
+    "Yoyo.Abp.Wechat.MP",    
+    "Yoyo.Abp.Wechat.Open",    
+    "Yoyo.Abp.Wechat.TenPay",    
+    "Yoyo.Abp.Wechat.Work",
+    "Yoyo.Abp.Wechat.WxOpen"   
 )
 
 # Rebuild solution
@@ -30,8 +40,8 @@ foreach ($project in $projects) {
     # Create nuget pack
     Set-Location $projectFolder
     Remove-Item -Recurse (Join-Path $projectFolder "bin/Release")
-    & dotnet msbuild /p:Configuration=Release /p:SourceLinkCreate=true
-    & dotnet msbuild /t:pack /p:Configuration=Release /p:SourceLinkCreate=true
+    & dotnet msbuild /p:Configuration=Release /p:SourceLinkCreate=true    
+    & dotnet msbuild /t:pack /p:Configuration=Release /p:SourceLinkCreate=true /P:Version=$version
 
     # Copy nuget package
     $projectPackPath = Join-Path $projectFolder ("/bin/Release/" + $project + ".*.nupkg")

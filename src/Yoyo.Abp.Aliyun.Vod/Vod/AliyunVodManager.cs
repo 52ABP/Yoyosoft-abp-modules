@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Abp.Domain.Services;
 using Abp.UI;
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.vod.Model.V20170321;
-using JetBrains.Annotations;
 using Yoyo.Abp.Configuration;
 
 namespace Yoyo.Abp.Vod
@@ -15,7 +12,13 @@ namespace Yoyo.Abp.Vod
     /// 阿里云VOD的领域服务
     /// </summary>
     public class AliyunVodManager:DomainService
+{
+
+    public string InitMethod()
     {
+
+        return "方法注册成功";
+    }
 
         /// <summary>
         /// 初始化vod获取客户端信息
@@ -39,9 +42,17 @@ namespace Yoyo.Abp.Vod
         public DefaultAcsClient InitVodClient()
         {
             IClientProfile profile = DefaultProfile.GetProfile(AliyunVodConfigInfo.RegionId, AliyunAccessConfigInfo.AccessKeyId, AliyunAccessConfigInfo.AccessKeySecret);
-
-            var client = new DefaultAcsClient(profile);
-            return client;
+            try
+            {
+                var client = new DefaultAcsClient(profile);
+                return client;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw new UserFriendlyException(e.Message);
+            }
+          
         }
 
 
@@ -83,6 +94,119 @@ namespace Yoyo.Abp.Vod
 
         }
 
-        
+        #region 媒体资源分类管理
+
+        /// <summary>
+        /// 添加媒体资源分类
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public AddCategoryResponse CreateMediaCategory(AddCategoryRequest input)
+        {
+            // 父分类ID，若不填，则默认生成一级分类，根节点分类ID为 -1
+            if (!input.ParentId.HasValue)
+            {
+                input.ParentId = -1;
+
+            }
+
+            var client = InitVodClient();
+
+            var model = client.GetAcsResponse(input);
+
+            return model;
+
+
+        }
+        /// <summary>
+        /// 修改媒体资源分类
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public UpdateCategoryResponse UpdateMediaCategory(UpdateCategoryRequest input)
+        {
+          
+
+            var client = InitVodClient();
+            var model = client.GetAcsResponse(input);
+            return model;
+        }
+
+        /// <summary>
+        /// 查询分类以及其子分类
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public GetCategoriesResponse GetMediaCategories(GetCategoriesRequest input)
+        {
+            var client = InitVodClient();
+            GetCategoriesResponse response = client.GetAcsResponse(input);
+             
+
+            return response;
+
+        }
+
+
+
+
+
+        /// <summary>
+        /// 删除媒体资源
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public DeleteCategoryResponse DeleteCategories(DeleteCategoryRequest input)
+        {
+
+            var client = InitVodClient();
+
+            DeleteCategoryResponse response = client.GetAcsResponse(input);
+
+
+            return response;
+
+
+        }
+
+
+
+        #endregion
+
+
+        #region 媒体资源管理
+
+
+        public SearchMediaResponse SearchMediaList(SearchMediaRequest input)
+        {
+
+            var client = InitVodClient();
+
+
+           var response = client.GetAcsResponse(input);
+
+           return response;
+        }
+
+
+        public GetVideoInfoResponse GetVideoInfo(GetVideoInfoRequest input)
+        {
+            var client = InitVodClient();
+
+              
+
+            GetVideoInfoResponse response = client.GetAcsResponse(input);
+
+            return response;
+
+
+
+        }
+
+
+
+
+        #endregion
+
     }
 }

@@ -1,3 +1,5 @@
+using System.Reflection;
+using Abp;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 
@@ -6,14 +8,18 @@ namespace Yoyo.Abp
     /// <summary>
     /// YoyoSoft Abp 阿里云VOD模块
     /// </summary>
+    
     public class YoyoAbpAliyunVodModule : AbpModule
     {
+        public override void PreInitialize()
+        {
+         
+        }
 
         public override void Initialize()
         {
-            var thisAssembly = typeof(YoyoAbpAliyunVodModule).GetAssembly();
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
-            IocManager.RegisterAssemblyByConvention(thisAssembly);
         }
 
         public override void PostInitialize()
@@ -21,9 +27,6 @@ namespace Yoyo.Abp
 
         }
 
-        public override void PreInitialize()
-        {
-
-        }
+       
     }
 }
