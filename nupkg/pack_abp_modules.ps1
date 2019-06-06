@@ -3,6 +3,8 @@ $packFolder = (Get-Item -Path "./" -Verbose).FullName
 #获取项目路径信息
 
 
+Write-Host "$packFolder"
+
 Write-Host "Generating Build Number"
 $baseDate = [datetime]"01/01/2000"
 $currentDate = $(Get-Date)
@@ -15,6 +17,10 @@ Write-Host "$version"
 
 $slnPath = Join-Path $packFolder "../"
 $srcPath = Join-Path $slnPath "src"
+
+Write-Host "$slnPath"
+
+Write-Host "$srcPath"
 
 # List of projects
 $projects = (

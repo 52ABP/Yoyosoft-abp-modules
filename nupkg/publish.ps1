@@ -1,10 +1,13 @@
 # Paths
 $packFolder = (Get-Item -Path "./" -Verbose).FullName
-#获取项目的路径信息
+#获取项目路径信息
+ 
+$anem= Dir -name
+   
+Write-Host "$anem "
+Write-Host "$packFolder "
 
 
-$slnPath = Join-Path $packFolder "../"
-$srcPath = Join-Path $slnPath "src"
 
 
 # List of projects
@@ -19,15 +22,22 @@ $projects = (
     "Yoyo.Abp.Wechat.WxOpen"   
 )
 
+# Copy all nuget packages to the pack folder
+foreach ($project in $projects) {
+    
+    $projectFolder = Join-Path $srcPath $project
 
-# Rebuild solution
-Set-Location $slnPath
+  
+
+    # Create nuget pack
+   # Set-Location $projectFolder
+  
+  
  
+  
 
-# Go back to the pack folder
-Set-Location $packFolder
+ # $projectPackPath = Join-Path $projectFolder ("/bin/Release/" + $project + ".*.nupkg")
 
 
-Write-Host "$packFolder"
-Write-Host "$slnPath"
-Write-Host "$srcPath"
+}
+ 
