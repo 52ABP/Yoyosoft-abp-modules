@@ -176,7 +176,11 @@ namespace Yoyo.Abp.Vod
 
         #region 媒体资源管理
 
-
+        /// <summary>
+        /// 搜索媒体资源
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public SearchMediaResponse SearchMediaList(SearchMediaRequest input)
         {
 
@@ -188,7 +192,11 @@ namespace Yoyo.Abp.Vod
            return response;
         }
 
-
+        /// <summary>
+        /// 获取视频信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public GetVideoInfoResponse GetVideoInfo(GetVideoInfoRequest input)
         {
             var client = InitVodClient();
@@ -197,9 +205,25 @@ namespace Yoyo.Abp.Vod
 
             GetVideoInfoResponse response = client.GetAcsResponse(input);
 
+            
+
+
             return response;
 
 
+
+        }
+        /// <summary>
+        /// 批量获取视频信息
+        /// </summary>
+        /// <returns></returns>
+        public GetVideoInfosResponse GetBatchVideosInfo(GetVideoInfosRequest input)
+        {
+
+            var client = InitVodClient();
+            GetVideoInfosResponse response = client.GetAcsResponse(input);
+
+            return response;
 
         }
 
