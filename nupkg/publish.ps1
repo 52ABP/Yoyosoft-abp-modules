@@ -1,14 +1,15 @@
+
+
 # Paths
 $packFolder = (Get-Item -Path "./" -Verbose).FullName
 #获取项目路径信息
+
+Write-Host "$packFolder"
  
 $anem= Dir -name
    
 Write-Host "$anem "
 Write-Host "$packFolder "
-
-
-
 
 # List of projects
 $projects = (
