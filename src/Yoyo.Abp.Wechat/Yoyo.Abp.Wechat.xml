@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yoyo.Abp.Wechat</name>
+    </assembly>
+    <members>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatExtensions">
+            <summary>
+            YoYo Soft 对 Senparc.Weixin、CO2NET、Redis 的扩展
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.AddYoYoSenparc(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            添加YoYo Senparc CO2NET和Weixin
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.AddYoYoSenparcCO2NET(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            添加YoYo Senparc CO2NET
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.AddYoYoSenparcWeixin(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            添加YoYo Senparc Weixin
+            </summary>
+            <param name="serviceCollection"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.UseYoYoSenparcCO2NET(Senparc.CO2NET.SenparcSetting,System.String,System.Boolean,System.Func{System.Collections.Generic.IList{Senparc.CO2NET.Cache.IDomainExtensionCacheStrategy}})">
+            <summary>
+            开始YoYo Senparc.CO2NET SDK 初始化参数流程
+            
+            (关于 UseYoYoSenparc() 的更多用法见 CO2NET Demo 中的 UseSenparcGlobal：https://github.com/Senparc/Senparc.CO2NET/blob/master/Sample/Senparc.CO2NET.Sample.netcore/Startup.cs)
+            </summary>
+            <param name="senparcSetting"></param>
+            <param name="contentRootPath">提供网站根目录(env.ContentRootPath,env类型为IHostingEnvironment)</param>
+            <param name="autoScanExtensionCacheStrategies">是否自动扫描全局的扩展缓存(会增加系统启动时间)</param>
+            <param name="extensionCacheStrategiesFunc">
+            <para>需要手动注册的扩展缓存策略</para>
+            <para>（LocalContainerCacheStrategy、RedisContainerCacheStrategy、MemcacheContainerCacheStrategy已经自动注册），</para>
+            <para>如果设置为 null（注意：不是委托返回 null，是整个委托参数为 null），则自动使用反射扫描所有可能存在的扩展缓存策略</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.UseYoYoSenparcCO2NETGlobalCache(Senparc.CO2NET.RegisterServices.IRegisterService,Microsoft.AspNetCore.Builder.IApplicationBuilder,Senparc.CO2NET.SenparcSetting,System.String,System.Func{Senparc.CO2NET.SenparcSetting,System.Boolean})">
+            <summary>
+            YoYo Senparc CO2NET 全局缓存配置（按需）
+            </summary>
+            <param name="registerService"></param>
+            <param name="applicationBuilder"></param>
+            <param name="senparcSetting"></param>
+            <param name="customCacheNamespace">当同一个分布式缓存同时服务于多个网站（应用程序池）时，可以使用命名空间将其隔离（非必须）</param>
+            <param name="configRedisAction">配置全局使用Redis缓存（按需，独立）,此函数返回结果为true将启用redis</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.UseYoYoSenparcCO2NETTraceLog(Senparc.CO2NET.RegisterServices.IRegisterService,System.Action)">
+            <summary>
+            YoYo Senparc CO2NET 跟踪日志
+            </summary>
+            <param name="registerService"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatExtensions.UseYoYoSenparcWeixin(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.SenparcWeixinSetting,Senparc.CO2NET.SenparcSetting)">
+            <summary>
+            开始 Senparc.Weixin SDK 初始化参数流程
+            </summary>
+            <param name="registerService"></param>
+            <param name="senparcWeixinSetting">微信全局设置参数，必填</param>
+            <param name="senparcSetting">用于提供 SenparcSetting.Cache_Redis_Configuration 和 Cache_Memcached_Configuration 两个参数，如果不使用这两种分布式缓存可传入null</param>
+            <returns></returns>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatModule">
+            <summary>
+            YoYo Soft Senparc.WeiXin  Module
+            </summary>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatRegisterService">
+            <summary>
+            快捷注册类，YoYoSoft 实现的 IRegisterService
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatRegisterService.Start(Senparc.CO2NET.SenparcSetting,System.String)">
+            <summary>
+            开始 Senparc.CO2NET SDK 初始化参数流程（.NET Core）
+            </summary>
+            <param name="senparcSetting"></param>
+            <param name="contentRootPath">asp.net core应用中IHostingEnvironment对象的ContentRootPath</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yoyo.Abp.Wechat.Work</name>
+    </assembly>
+    <members>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatWorkExtensions">
+            <summary>
+            YoYo Soft 对 Senparc.Weixin.Work 的扩展
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatWorkExtensions.UseYoYoSenparcWorkAccount(Senparc.CO2NET.RegisterServices.IRegisterService,System.String,System.String,System.String)">
+            <summary>
+            注册公众号（或小程序）信息
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinCorpId">weixinCorpId</param>
+            <param name="weixinCorpSecret">weixinCorpSecret</param>
+            <param name="name">标记AccessToken名称（如微信公众号名称），帮助管理员识别</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatWorkExtensions.UseYoYoSenparcWorkAccount(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForWork,System.String)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册第三方平台信息
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForWork">SenparcWeixinSetting</param>
+            <param name="name">统一标识，如果为null，则使用 SenparcWeixinSetting.ItemKey </param>
+            <returns></returns>
+        </member>
+        <member name="T:Yoyo.Abp.YoYoSenparcWXWorkModule">
+            <summary>
+            YoYo Soft Senparc.WeiXin.Work  Module
+            </summary>
+        </member>
+    </members>
+</doc>

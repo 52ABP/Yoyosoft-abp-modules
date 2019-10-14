@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yoyo.Abp.Wechat.TenPay</name>
+    </assembly>
+    <members>
+        <member name="T:Yoyo.Abp.V2.Register`2">
+            <summary>
+            V2微信支付注册
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.V2.Register`2.RegisterTenpayOld(`0,`1,System.Func{Senparc.Weixin.TenPay.V2.TenPayInfo},System.String)">
+            <summary>
+            手动注册微信支付（V2）
+            </summary>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <param name="tenPayInfo">()=>new TenPayInfo()</param>
+            <param name="name"></param>
+        </member>
+        <member name="T:Yoyo.Abp.V2.Register">
+            <summary>
+            V2微信支付注册
+            </summary>
+        </member>
+        <member name="T:Yoyo.Abp.V2.RegisterInfoCollection`2">
+            <summary>
+            用户注册微信支付（V2）InfoCollection
+            </summary>
+            <typeparam name="UserKeyType">用户主键类型</typeparam>
+            <typeparam name="TenantKeyType">租户主键类型</typeparam>
+        </member>
+        <member name="M:Yoyo.Abp.V2.RegisterInfoCollection`2.Register(`0,`1,System.String)">
+            <summary>
+            注册
+            </summary>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <param name="PartnerId">商户Id</param>
+        </member>
+        <member name="T:Yoyo.Abp.V2.RegisterInfoCollection">
+            <summary>
+            用户注册微信支付（V2）InfoCollection
+            </summary>
+        </member>
+        <member name="T:Yoyo.Abp.V3.Register`2">
+            <summary>
+            V3微信支付注册
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.V3.Register`2.RegisterTenpayV3(`0,`1,System.Func{Senparc.Weixin.TenPay.V3.TenPayV3Info},System.String)">
+            <summary>
+            手动注册微信支付（V3）
+            </summary>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <param name="tenPayV3Info">()=>new TenPayV3Info()</param>
+            <param name="name"></param>
+        </member>
+        <member name="T:Yoyo.Abp.V3.RegisterV3InfoCollection`2">
+            <summary>
+            用户注册微信支付（V3）InfoCollection
+            </summary>
+            <typeparam name="UserKeyType">用户主键类型</typeparam>
+            <typeparam name="TenantKeyType">租户主键类型</typeparam>
+        </member>
+        <member name="M:Yoyo.Abp.V3.RegisterV3InfoCollection`2.Register(`0,`1,System.String)">
+            <summary>
+            注册
+            </summary>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <param name="MchId">商户Id</param>
+        </member>
+        <member name="T:Yoyo.Abp.V3.RegisterV3InfoCollection">
+            <summary>
+            用户注册微信支付（V3）InfoCollection
+            </summary>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatTenPayExtensions">
+            <summary>
+            YoYo Soft 对 Senparc.Weixin.TenPay 的扩展
+            </summary>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV2``2(Senparc.CO2NET.RegisterServices.IRegisterService,System.Func{Senparc.Weixin.TenPay.V2.TenPayInfo},System.String,``0,``1)">
+            <summary>
+            注册微信支付Tenpay（注意：新注册账号请使用 UseYoYoSenparcTenpayV3！
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="tenPayInfo">微信支付（旧版本）参数</param>
+            <param name="name">公众号唯一标识名称</param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV2(Senparc.CO2NET.RegisterServices.IRegisterService,System.Func{Senparc.Weixin.TenPay.V2.TenPayInfo},System.String,System.Int64,System.Int64)">
+            <summary>
+            注册微信支付Tenpay（注意：新注册账号请使用 UseYoYoSenparcTenpayV3！
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="tenPayInfo">微信支付（旧版本）参数</param>
+            <param name="name">公众号唯一标识名称</param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV2``2(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForOldTenpay,System.String,``0,``1)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册微信支付Tenpay（注意：新注册账号请使用 UseYoYoSenparcTenpayV3！）
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForOldTepay">ISenparcWeixinSetting</param>
+            <param name="name">统一标识，如果为null，则使用 weixinSettingForOldTepay.ItemKey </param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV2(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForOldTenpay,System.String,System.Int64,System.Int64)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册微信支付Tenpay（注意：新注册账号请使用 UseYoYoSenparcTenpayV3！）
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForOldTepay">ISenparcWeixinSetting</param>
+            <param name="name">统一标识，如果为null，则使用 weixinSettingForOldTepay.ItemKey </param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV3``2(Senparc.CO2NET.RegisterServices.IRegisterService,System.Func{Senparc.Weixin.TenPay.V3.TenPayV3Info},System.String,``0,``1)">
+            <summary>
+            注册微信支付TenpayV3
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="tenPayV3Info">微信支付（新版本 V3）参数</param>
+            <param name="name">公众号唯一标识名称</param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV3(Senparc.CO2NET.RegisterServices.IRegisterService,System.Func{Senparc.Weixin.TenPay.V3.TenPayV3Info},System.String,System.Int64,System.Int64)">
+            <summary>
+            注册微信支付TenpayV3
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="tenPayV3Info">微信支付（新版本 V3）参数</param>
+            <param name="name">公众号唯一标识名称</param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV3``2(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForTenpayV3,System.String,``0,``1)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册微信支付Tenpay（注意：新注册账号请使用 UseYoYoSenparcTenpayV3！
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForTenpayV3">ISenparcWeixinSetting</param>
+            <param name="name">统一标识，如果为null，则使用 SenparcWeixinSetting.ItemKey </param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Yoyo.Abp.YoyoAbpWechatTenPayExtensions.UseYoYoSenparcTenpayV3(Senparc.CO2NET.RegisterServices.IRegisterService,Senparc.Weixin.Entities.ISenparcWeixinSettingForTenpayV3,System.String,System.Int64,System.Int64)">
+            <summary>
+            根据 SenparcWeixinSetting 自动注册微信支付Tenpay（注意：新注册账号请使用 UseYoYoSenparcTenpayV3！
+            </summary>
+            <param name="registerService">RegisterService</param>
+            <param name="weixinSettingForTenpayV3">ISenparcWeixinSetting</param>
+            <param name="name">统一标识，如果为null，则使用 SenparcWeixinSetting.ItemKey </param>
+            <param name="userId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Yoyo.Abp.YoyoAbpWechatTenPayModule">
+            <summary>
+            YoYo Soft Senparc.WeiXin.TenPay  Module
+            </summary>
+        </member>
+    </members>
+</doc>

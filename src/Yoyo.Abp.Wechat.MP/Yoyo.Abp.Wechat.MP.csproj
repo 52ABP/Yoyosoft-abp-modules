@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Yoyo.Abp</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\develops\52abp\Yoyo.Abp.Modules\src\Yoyo.Abp.Wechat.MP\Yoyo.Abp.Wechat.MP.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="4.5.0" />
+    <PackageReference Include="Senparc.Weixin.MP" Version="16.6.11" />
+    <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Yoyo.Abp.Wechat.MP.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
