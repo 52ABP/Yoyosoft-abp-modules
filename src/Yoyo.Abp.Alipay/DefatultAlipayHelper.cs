@@ -4,26 +4,21 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Threading.Tasks;
-
+using Abp.Extensions;
+using Alipay.AopSdk.AspnetCore;
+using Alipay.AopSdk.Core.Domain;
+using Alipay.AopSdk.Core.Request;
+using Alipay.AopSdk.Core.Response;
+using Alipay.AopSdk.F2FPay.Business;
+using Alipay.AopSdk.F2FPay.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-
-using Abp.Extensions;
 using QRCoder;
-
-using Alipay.AopSdk.AspnetCore;
-using Alipay.AopSdk.F2FPay.Domain;
-using Alipay.AopSdk.F2FPay.Business;
-using Alipay.AopSdk.Core.Request;
-using Alipay.AopSdk.Core.Domain;
-
-using F2FResultEnum = Alipay.AopSdk.F2FPay.Model.ResultEnum;
-using Alipay.AopSdk.Core.Response;
-
-using Yoyo.Abp.WapPay;
 using Yoyo.Abp.FTF;
-using Yoyo.Abp.WebPay;
 using Yoyo.Abp.Other;
+using Yoyo.Abp.WapPay;
+using Yoyo.Abp.WebPay;
+using F2FResultEnum = Alipay.AopSdk.F2FPay.Model.ResultEnum;
 
 namespace Yoyo.Abp
 {
@@ -102,7 +97,7 @@ namespace Yoyo.Abp
 
             if (input.Data.ProductCode.IsNullOrWhiteSpace())
             {
-                input.Data.ProductCode = YoyoAbpAlipayConsts.ProductCode_FAST_INSTANT_TRADE_PAY;
+                input.Data.ProductCode = YoYoAlipayConsts.ProductCode_FAST_INSTANT_TRADE_PAY;
             }
 
 
@@ -140,7 +135,7 @@ namespace Yoyo.Abp
             // 设置产品代码
             if (input.Data.ProductCode.IsNullOrWhiteSpace())
             {
-                input.Data.ProductCode = YoyoAbpAlipayConsts.ProductCode_QUICK_WAP_WAY;
+                input.Data.ProductCode = YoYoAlipayConsts.ProductCode_QUICK_WAP_WAY;
             }
             // 设置支付中途退出返回商户网站地址
             if (input.Data.QuitUrl.IsNullOrWhiteSpace())

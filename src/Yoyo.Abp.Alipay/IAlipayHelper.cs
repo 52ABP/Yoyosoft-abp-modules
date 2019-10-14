@@ -1,19 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Abp.Dependency;
-using Alipay.AopSdk.F2FPay.Business;
-using Alipay.AopSdk.Core.Domain;
 using Alipay.AopSdk.AspnetCore;
-using Microsoft.AspNetCore.Http;
+using Alipay.AopSdk.Core.Domain;
 using Alipay.AopSdk.Core.Response;
+using Alipay.AopSdk.F2FPay.Business;
 using Alipay.AopSdk.F2FPay.Domain;
-
-using Yoyo.Abp.WapPay;
+using Microsoft.AspNetCore.Http;
 using Yoyo.Abp.FTF;
-using Yoyo.Abp.WebPay;
 using Yoyo.Abp.Other;
+using Yoyo.Abp.WapPay;
+using Yoyo.Abp.WebPay;
 
 namespace Yoyo.Abp
 {

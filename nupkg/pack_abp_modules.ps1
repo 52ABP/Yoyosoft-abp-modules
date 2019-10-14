@@ -9,9 +9,9 @@ Write-Host "Generating Build Number"
 $baseDate = [datetime]"01/01/2000"
 $currentDate = $(Get-Date)
 $interval = NEW-TIMESPAN ¨CStart $baseDate ¨CEnd $currentDate
-$days = $interval.Days
+$days = $interval.Days-7200
 $minutes=$interval.Minutes
-$version="1.0.$days.$minutes"
+$version="3.8.$days.$minutes"
 Write-Host "$version"
 
 
@@ -37,6 +37,8 @@ $projects = (
 # Rebuild solution
 Set-Location $slnPath
 & dotnet restore
+& dotnet build
+
 
 # Copy all nuget packages to the pack folder
 foreach ($project in $projects) {

@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Yoyo.Abp
 {
     /// <summary>
     /// 常量
     /// </summary>
-    public class YoyoAbpAlipayConsts
+    public class YoYoAlipayConsts
     {
         /// <summary>
         /// 销售产品码 PC支付 FAST_INSTANT_TRADE_PAY

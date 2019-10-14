@@ -7,7 +7,6 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <DocumentationFile>D:\develops\52abp\Yoyo.Abp.Modules\src\Yoyo.Abp.Alipay\Yoyo.Abp.Alipay.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Abp" Version="4.5.0" />
