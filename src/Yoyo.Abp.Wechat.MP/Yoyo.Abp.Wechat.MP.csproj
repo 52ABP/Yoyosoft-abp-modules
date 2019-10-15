@@ -19,7 +19,7 @@
     <PackageProjectUrl>https://github.com/52ABP/Yoyosoft-abp-modules</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSymbols>false</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <!--Nuget包配置信息END-->
