@@ -13,7 +13,7 @@ start_time="2015-03-16"
 time1=$(($(date +%s -d "now") - $(date +%s -d "${start_time}")))
 days=$((${time1} / (3600 * 24) - 1600)) #间隔的天数
 hours=$(date +%H -d "now")
-minutes=$(date +%m -d "now")
+minutes=$(date +%M -d "now")
 version="3.8.$days.$hours$minutes"
 
 echo "即将生成的版本号内容:"${version}
