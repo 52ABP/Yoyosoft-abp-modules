@@ -7,7 +7,7 @@ pipeline {
       }
       steps {
         sh 'echo " Start Build...."'
-        sh './build/pack.sh'
+         sh "chmod +x ./build/aa.sh; ./build/aa.sh"
         sh 'dotnet build'
         sh 'echo "Build Complete"'
       }
