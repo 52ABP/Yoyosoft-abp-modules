@@ -8,6 +8,7 @@ pipeline {
     }
 	
 	environment {
+		// # 获取配置在Jenkins内部的nuget key文件
         NUGET_KEY     = credentials('Yoyosoft-abp-modules-nuget-key')
     }
 	
