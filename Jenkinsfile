@@ -6,11 +6,9 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh 'dotnet build'
-        sh "echo ${env.NUGET_KEY}"
-		sh "echo ${env.test}"
- 		sh "echo ${test}"
-  		sh 'echo nuget上传'
+      sh 'echo "begin build..."'
+      sh 'dotnet build --configuration Release' //编译项目
+      sh 'echo "begin success..."'      	 
       }
     }
     stage('Releases') {
@@ -22,16 +20,19 @@ pipeline {
 
       }
       steps {
-        sh 'echo nuget上传'
+        sh 'echo "begin build..."
+echo "Nuget 上传包"
+echo "${env.NUGET_KEY}"
+echo "build success"'
         sh "echo ${env.NUGET_KEY}"
       }
     }
   }
   environment {
     NUGET_KEY = credentials('Yoyosoft-abp-modules-nuget-key')
-    test = '123test'
+   
   }
   triggers {
-    githubPush()
+    githubPush() //触发方式为push
   }
 }
