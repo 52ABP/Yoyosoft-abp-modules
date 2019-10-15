@@ -20,7 +20,9 @@ pipeline {
 				sh "echo ${env.NUGET_KEY}"
 			}
 		}
-		stage('Release') {
+
+		// 貌似每一触发。。。
+		stage('Releases') {
 			when {
 				branch "master"
 				expression { ciRelease action: 'check' }
