@@ -16,6 +16,7 @@ pipeline {
 			when{branch "master"}
 			steps {
 				sh 'dotnet build'
+				sh "echo ${env.NUGET_KEY}"
 			}
 		}
 		stage('Release') {
