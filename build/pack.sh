@@ -30,7 +30,7 @@ publishdir=$(
     pwd
 )
 echo "开始构建项目，生成Nuget包的内容"
-dotnet pack --no-build --configuration Release --output ${publishdir} -p:Version=${version}
+dotnet pack --configuration Release --output ${publishdir} -p:Version=${version}
 echo "开始发布到nuget.org"
 
 dotnet nuget push *.nupkg -k ${nugetkey} -s https://api.nuget.org/v3/index.json
