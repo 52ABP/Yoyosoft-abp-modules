@@ -1,3 +1,4 @@
+library 'JenkinsSharedLibraries'
 pipeline {
   agent any
   stages {
