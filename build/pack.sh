@@ -36,3 +36,9 @@ echo "开始发布到nuget.org"
 dotnet nuget push *.nupkg -k ${nugetkey} -s https://api.nuget.org/v3/index.json
 
 echo "项目构建完毕"
+# 清理
+echo "开始清理旧版本的Nuget包"
+
+if [[ $publishdir != "/" ]]; then
+    rm -rf ${publishdir}
+fi
