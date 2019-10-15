@@ -11,12 +11,10 @@ pipeline {
         sh 'echo "Build Complete"'
       }
     }
-       stage('Release') {
+      stage('Release') {
       when {
-        branch 'master'
-          expression {
-          ciRelease action: 'check'  
-        }
+        branch "master"
+        expression { ciRelease action: 'check' }
       }
       steps {
           withEnv(["nugetkey=${env.NUGET_KEY}"]) {
