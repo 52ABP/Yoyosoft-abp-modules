@@ -7,9 +7,29 @@ pipeline {
       }
       steps {
         sh 'echo " Start Build...."'
-         sh "echo ${env.JOB_NAME}"
+        sh "echo ${env.JOB_NAME}"
+		sh "echo ${env.JOB_NAME}"
+        sh "echo ${env.JOB_BASENAME}"
+        sh "echo ${env.BUILDTAG}"
+        sh "echo ${env.WORKSPACE}"
+        sh "echo ${env.BUILDNUMBER}"
+        sh "echo ${env.BUILDID}"
+        sh "echo ${env.BUILDDISPLAYNAME}"
+        sh "echo ${env.NODE_NAME}"
+        sh "echo ${env.NODELABELS}"
+        sh "echo ${env.JENKINSHOME}"
+        sh "echo ${env.JENKINS_URL}"
+        sh "echo ${env.BUILDURL}"
+        sh "echo ${env.JOB_URL}"
         sh 'dotnet build'
         sh 'echo "Build Complete"'
+
+
+    
+
+ 
+
+
       }
     }
        stage('Release') {
