@@ -3,7 +3,30 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Yoyo.Abp</RootNamespace>
+
+    <!--Nuget包配置信息-->
+    <Description>52ABP框架微信公众号的库</Description>
+    <copyright>Copyright © 52ABP.com All Rights Reserved</copyright>
+
+    <PackageIcon>icon.png</PackageIcon>
+
+
+    <Authors>梁桐铭</Authors>
+    <Company>YoyoSoft</Company>
+    <Product>52ABP-PRO</Product>
+    <licenseUrl>https://github.com/52ABP/Yoyosoft-abp-modules/blob/dev/LICENSE</licenseUrl>
+    <projectUrl>https://www.52abp.com/</projectUrl>
+    <PackageProjectUrl>https://github.com/52ABP/Yoyosoft-abp-modules</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>false</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!--Nuget包配置信息END-->
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>D:\develops\52abp\Yoyo.Abp.Modules\src\Yoyo.Abp.Wechat.Open\Yoyo.Abp.Wechat.Open.xml</DocumentationFile>

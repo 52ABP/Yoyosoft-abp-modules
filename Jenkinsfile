@@ -1,34 +1,33 @@
-#!/usr/bin/env groovy Jenkinsfile
 library 'JenkinsSharedLibraries'
 pipeline {
-    agent any
-
-    triggers {
-      githubPush()
+  agent any
+  stages {
+    stage('Build') {
+      when {
+        branch 'master'
+      }
+      steps {
+        sh 'echo " Start Build...."'       
+        sh 'dotnet build'
+        sh 'echo "Build Complete"'
+      }
     }
-	
-	environment {
-		// # 获取配置在Jenkins内部的nuget key文件
+      stage('Release') {
+      when {
+        branch "master"
+        expression { ciRelease action: 'check' }
+      }
+      steps {
+          withEnv(["nugetkey=${env.NUGET_KEY}"]) {
+                    sh "chmod +x ./build/pack.sh; ./build/pack.sh"
+      }
+      }
+    }
+  }
+  environment {
         NUGET_KEY     = credentials('Yoyosoft-abp-modules-nuget-key')
     }
-	
-	stages {
-		stage('Build') {
-			when{branch "master"}
-			steps {
-				sh 'dotnet build'
-				sh "echo ${env.NUGET_KEY}"
-			}
-		}
-		stage('Release') {
-			when {
-				branch "master"
-				expression { ciRelease action: 'check' }
-			}
-			steps {
-				sh "echo nuget上传"
-				sh "echo ${env.NUGET_KEY}"
-			}
-		}
+    triggers {
+      githubPush()
     }
 }

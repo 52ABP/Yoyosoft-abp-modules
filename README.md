@@ -2,6 +2,13 @@
 
 本仓库由52ABP团队进行维护，以下的模块都是由52ABP组织发布的Nuget包，开箱即用。
 
+ 
+
+
+[![Build Status](http://ltm.eastasia.cloudapp.azure.com/job/Yoyosoft-abp-modules/job/master/badge/icon)](http://ltm.eastasia.cloudapp.azure.com/blue/organizations/jenkins/Yoyosoft-abp-modules/activity/)
+
+
+
 ## Nuget包
 
 

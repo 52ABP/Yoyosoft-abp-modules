@@ -1,6 +1,6 @@
 # Paths
 $packFolder = (Get-Item -Path "./" -Verbose).FullName
-#获取项目路径信息
+#鑾峰彇椤圭洰璺緞淇℃伅
 
 
 Write-Host "$packFolder"
@@ -8,10 +8,12 @@ Write-Host "$packFolder"
 Write-Host "Generating Build Number"
 $baseDate = [datetime]"01/01/2000"
 $currentDate = $(Get-Date)
-$interval = NEW-TIMESPAN –Start $baseDate –End $currentDate
-$days = $interval.Days-7200
-$minutes=$interval.Minutes
-$version="3.8.$days.$minutes"
+$interval = NEW-TIMESPAN 鈥揝tart $baseDate 鈥揈nd $currentDate
+Write-Host "$interval"
+
+$days = $interval.Days - 7200
+$minutes = $interval.Minutes
+$version = "3.8.$days.$minutes"
 Write-Host "$version"
 
 
