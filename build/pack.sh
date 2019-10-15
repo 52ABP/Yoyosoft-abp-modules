@@ -33,7 +33,9 @@ echo "开始构建项目，生成Nuget包的内容"
 dotnet pack --configuration Release --output ${publishdir} -p:Version=${version}
 echo "开始发布到nuget.org"
 
-dotnet nuget push *.nupkg -k ${nugetkey} -s https://api.nuget.org/v3/index.json
+for nugetfile in ${publishdir}/*; do
+    dotnet nuget push $nugetfile -k ${nugetkey} -s https://api.nuget.org/v3/index.json
+done
 
 echo "项目构建完毕"
 # 清理
