@@ -6,9 +6,14 @@ pipeline {
         branch 'master'
       }
       steps {
-      sh 'echo "begin build..."'
-      sh 'dotnet build --configuration Release' //编译项目
-      sh 'echo "begin success..."'      	 
+        sh '''dotnet build --configuration Release
+dotnet pack    --no-build   --configuration Release --output nupkgs  
+
+'''
+        sh "echo ${env.NUGET_KEY}"
+        sh "echo ${env.test}"
+        sh "echo ${test}"
+        sh 'echo nuget上传'
       }
     }
     stage('Releases') {
