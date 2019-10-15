@@ -1,7 +1,20 @@
 #!/usr/bin/env groovy Jenkinsfile
 library 'JenkinsSharedLibraries'
 pipeline {
-  agent any
+   agent {
+        node {
+            label 'slave-1'
+        }
+    }
+
+    environment {
+    NUGET_KEY = credentials('Yoyosoft-abp-modules-nuget-key')
+   
+  }
+  triggers {
+    githubPush() //触发方式为push
+  }
+  
   stages {
     stage('Build') {
       when {
@@ -26,11 +39,5 @@ pipeline {
       }
     }
   }
-  environment {
-    NUGET_KEY = credentials('Yoyosoft-abp-modules-nuget-key')
-   
-  }
-  triggers {
-    githubPush() //触发方式为push
-  }
+
 }
