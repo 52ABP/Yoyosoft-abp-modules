@@ -6,10 +6,8 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh '''dotnet build --configuration Release
-dotnet pack    --no-build   --configuration Release --output nupkgs  
-
-'''
+        sh "dotnet build --configuration Release
+dotnet pack    --no-build   --configuration Release --output nupkgs  "
         sh "echo ${env.NUGET_KEY}"
         sh "echo ${env.test}"
         sh "echo ${test}"
