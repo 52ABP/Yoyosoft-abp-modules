@@ -12,9 +12,9 @@ echo "系统当前时间:"${dateNow}"" # 系统当前时间
 start_time="2015-03-16"
 time1=$(($(date +%s -d "now") - $(date +%s -d "${start_time}")))
 days=$((${time1} / (3600 * 24) - 1600)) #间隔的天数
-minutes=$(date +%H -d "now")
-
-version="3.8.$days.$minutes"
+hours=$(date +%H -d "now")
+minutes=$(date +%m -d "now")
+version="3.8.$days.$hours$minutes"
 
 echo "即将生成的版本号内容:"${version}
 
@@ -31,4 +31,8 @@ publishdir=$(
 )
 echo "开始构建项目，生成Nuget包的内容"
 dotnet pack --no-build --configuration Release --output ${publishdir} -p:Version=${version}
+echo "开始发布到nuget.org"
+
+dotnet nuget push *.nupkg -k ${nugetkey} -s https://api.nuget.org/v3/index.json
+
 echo "项目构建完毕"
