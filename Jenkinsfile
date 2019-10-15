@@ -7,11 +7,16 @@ pipeline {
       githubPush()
     }
 	
+	environment {
+        NUGET_KEY     = credentials('Yoyosoft-abp-modules-nuget-key')
+    }
+	
 	stages {
 		stage('Build') {
 			when{branch "master"}
 			steps {
 				sh 'dotnet build'
+				sh "echo ${env.NUGET_KEY}"
 			}
 		}
 		stage('Release') {
@@ -21,6 +26,7 @@ pipeline {
 			}
 			steps {
 				sh "echo nuget上传"
+				sh "echo ${env.NUGET_KEY}"
 			}
 		}
     }
