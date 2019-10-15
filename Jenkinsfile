@@ -5,29 +5,22 @@ pipeline {
       when {
         branch 'master'
       }
-      steps {
-        sh "dotnet build --configuration Release
-dotnet pack    --no-build   --configuration Release --output nupkgs  "
-        sh "echo ${env.NUGET_KEY}"
-        sh "echo ${env.test}"
-        sh "echo ${test}"
-        sh 'echo nuget上传'
+      steps {      
+      sh "echo Start Build...."
+      sh "dotnet build"        
+      sh 'echo Build Complete'
       }
     }
-    stage('Releases') {
+    stage('Release') {
       when {
-        branch 'master'
+        branch 'master' // master分支执行
         expression {
-          ciRelease action: 'check'
+          ciRelease action: 'check' // 指 commit中有Release就执行
         }
-
       }
       steps {
-        sh 'echo "begin build..."
-echo "Nuget 上传包"
-echo "${env.NUGET_KEY}"
-echo "build success"'
-        sh "echo ${env.NUGET_KEY}"
+         withEnv(["nugetkey=${env.NUGET_KEY}"]) {
+                    sh "chmod +x ./build/pack.sh; ./build/pack.sh"
       }
     }
   }

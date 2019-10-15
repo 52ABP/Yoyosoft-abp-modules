@@ -27,7 +27,7 @@ echo "build success"
 
 # 打包nuget 包，已经包含了 build，所以加上 --no-build 
 # --version-suffix "ci-1234" 是增加后缀 ，如：Yoyo.Abp.Aliyun.Vod.1.0.0-ci-1234
-#dotnet pack    --no-build   --configuration Release --output nupkgs  
+#dotnet pack    --no-build   --configuration Release --output nupkgs   --version-suffix ""
 
 your_name="qinjx"
 echo $baseDate
