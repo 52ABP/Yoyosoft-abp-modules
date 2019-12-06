@@ -27,8 +27,8 @@ namespace Yoyo.Abp.Vod
         /// <returns></returns>
         public DefaultAcsClient InitVodClient(string regionId)
         {
-           IClientProfile profile = DefaultProfile.GetProfile(regionId, AliyunAccessConfigInfo.AccessKeyId, AliyunAccessConfigInfo.AccessKeySecret);
-           DefaultProfile.AddEndpoint(regionId, regionId, "vod", "vod." + regionId + ".aliyuncs.com");
+           var profile = DefaultProfile.GetProfile(regionId, AliyunAccessConfigInfo.AccessKeyId, AliyunAccessConfigInfo.AccessKeySecret);
+           profile.AddEndpoint(regionId, regionId, "vod", "vod." + regionId + ".aliyuncs.com");
            var client= new DefaultAcsClient(profile);
            return client;
         }
