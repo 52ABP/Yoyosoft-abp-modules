@@ -25,12 +25,12 @@ namespace Yoyo.Abp
         /// <param name="name">公众号名称</param>
         /// <param name="userId">用户Id</param>
         /// <param name="tenantId">租户Id</param>
-        public static void RegisterMpAccount<UserKeyType, TenantKeyType>(string key, string appId, string appSecret, string token, string encodingAESKey, string name = null, UserKeyType userId = default(UserKeyType), TenantKeyType tenantId = default(TenantKeyType))
+        public static async Task RegisterMpAccount<UserKeyType, TenantKeyType>(string key, string appId, string appSecret, string token, string encodingAESKey, string name = null, UserKeyType userId = default(UserKeyType), TenantKeyType tenantId = default(TenantKeyType))
         {
             MpInfoContainer<UserKeyType, TenantKeyType>.Register(key, appId, appSecret, token, encodingAESKey, name, userId, tenantId);
-            AccessTokenContainer.Register(appId, appSecret, name);
-            JsApiTicketContainer.Register(appId, appSecret, name);
-            WxCardApiTicketContainer.Register(appId, appSecret, name);
+            await AccessTokenContainer.RegisterAsync(appId, appSecret, name);
+            await JsApiTicketContainer.RegisterAsync(appId, appSecret, name);
+            await WxCardApiTicketContainer.RegisterAsync(appId, appSecret, name);
         }
 
         /// <summary>
@@ -46,7 +46,23 @@ namespace Yoyo.Abp
         /// <param name="tenantId">租户Id</param>
         public static void RegisterMpAccount(string key, string appId, string appSecret, string token, string encodingAESKey, string name = null, long userId = default(long), long tenantId = default(long))
         {
-            RegisterMpAccount<long, long>(key, appId, appSecret, token, encodingAESKey, name, userId, tenantId);
+            var task = RegisterMpAccountAsync(key, appId, appSecret, token, encodingAESKey, name, userId, tenantId);
+            Task.WaitAll(new[] { task }, 10000);
+        }
+        /// <summary>
+        /// 注册公众号
+        /// </summary>
+        /// <param name="key">获取公众号信息Key</param>
+        /// <param name="appId">公众号AppId</param>
+        /// <param name="appSecret">公众号AppSecret</param>
+        /// <param name="token">公众号Token</param>
+        /// <param name="encodingAESKey">公众号EncodingAESKey</param>
+        /// <param name="name">公众号名称</param>
+        /// <param name="userId">用户Id</param>
+        /// <param name="tenantId">租户Id</param>
+        public static async Task RegisterMpAccountAsync(string key, string appId, string appSecret, string token, string encodingAESKey, string name = null, long userId = default(long), long tenantId = default(long))
+        {
+            await RegisterMpAccount<long, long>(key, appId, appSecret, token, encodingAESKey, name, userId, tenantId);
         }
 
         /// <summary>

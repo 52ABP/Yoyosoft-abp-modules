@@ -3,6 +3,7 @@ using Senparc.Weixin.Open.Containers;
 using Senparc.CO2NET.RegisterServices;
 using Senparc.Weixin.Open;
 using System;
+using System.Threading.Tasks;
 
 namespace Yoyo.Abp
 {
@@ -25,8 +26,8 @@ namespace Yoyo.Abp
         /// <returns></returns>
         public static IRegisterService UseYoYoSenparcOpenComponent(this IRegisterService registerService,
             string componentAppId, string componentAppSecret,
-            Func<string, string> getComponentVerifyTicketFunc,
-            Func<string, string, string> getAuthorizerRefreshTokenFunc,
+            Func<string, Task<string>> getComponentVerifyTicketFunc,
+            Func<string, string, Task<string>> getAuthorizerRefreshTokenFunc,
             Action<string, string, RefreshAuthorizerTokenResult> authorizerTokenRefreshedFunc,
             string name = null)
         {
@@ -52,13 +53,14 @@ namespace Yoyo.Abp
         /// <returns></returns>
         public static IRegisterService UseYoYoSenparcOpenComponent(this IRegisterService registerService,
             Senparc.Weixin.Entities.ISenparcWeixinSettingForOpen weixinSettingForOpen,
-            Func<string, string> getComponentVerifyTicketFunc,
-            Func<string, string, string> getAuthorizerRefreshTokenFunc,
+            Func<string, Task<string>> getComponentVerifyTicketFunc,
+            Func<string, string, Task<string>> getAuthorizerRefreshTokenFunc,
             Action<string, string, RefreshAuthorizerTokenResult> authorizerTokenRefreshedFunc,
             string name = null)
         {
             return registerService.RegisterOpenComponent(
-                weixinSettingForOpen,
+                weixinSettingForOpen.Component_Appid,
+                weixinSettingForOpen.Component_Secret,
                 getComponentVerifyTicketFunc,
                 getAuthorizerRefreshTokenFunc,
                 authorizerTokenRefreshedFunc,

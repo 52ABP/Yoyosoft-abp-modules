@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Yoyo.Abp.Containers
 {
@@ -32,8 +33,26 @@ namespace Yoyo.Abp.Containers
         /// <param name="tenantId">租户Id</param>
         public static void Register(string key, string appId, string appSecret, string token, string encodingAESKey, string name = null, UserKeyType userId = default(UserKeyType), TenantKeyType tenantId = default(TenantKeyType))
         {
+            var task = RegisterAsync(key, appId, appSecret, token, encodingAESKey, name, userId, tenantId);
+            Task.WaitAll(new[] { task }, 10000);
+        }
+
+        /// <summary>
+        /// 注册公众号信息
+        /// </summary>
+        /// <param name="key">获取公众号信息Key</param>
+        /// <param name="appId">公众号AppId</param>
+        /// <param name="appSecret">公众号AppSecret</param>
+        /// <param name="token">公众号Token</param>
+        /// <param name="encodingAESKey">公众号EncodingAESKey</param>
+        /// <param name="name">公众号名称</param>
+        /// <param name="userId">用户Id</param>
+        /// <param name="tenantId">租户Id</param>
+        public static async Task RegisterAsync(string key, string appId, string appSecret, string token, string encodingAESKey, string name = null, UserKeyType userId = default(UserKeyType), TenantKeyType tenantId = default(TenantKeyType))
+        {
             //记录注册信息，RegisterFunc委托内的过程会在缓存丢失之后自动重试
-            RegisterFunc = () =>
+
+            RegisterFuncCollection[key] = async () =>
             {
                 //using (FlushCache.CreateInstance())
                 //{
@@ -46,13 +65,14 @@ namespace Yoyo.Abp.Containers
                     Token = token,
                     EncodingAESKey = encodingAESKey,
                 };
-                Update(key, bag, null);//第一次添加，此处已经立即更新
+                await UpdateAsync(key, bag, null).ConfigureAwait(false);//第一次添加，此处已经立即更新
                 return bag;
                 //}
             };
-            RegisterFunc();
+            var registerTask = RegisterFuncCollection[key]();
 
-            UpdateRegiestList(key, userId, tenantId);
+            var updateRegiestListTask = UpdateRegiestList(key, userId, tenantId);
+            await Task.WhenAll(new[] { registerTask, updateRegiestListTask });//等待所有任务完成
         }
 
         /// <summary>
@@ -116,19 +136,19 @@ namespace Yoyo.Abp.Containers
             RemoveFromCache(shortKey, default(UserKeyType), default(TenantKeyType));
         }
 
-        private static void UpdateRegiestList(string key, UserKeyType userId, TenantKeyType tenantId)
+        private static async Task UpdateRegiestList(string key, UserKeyType userId, TenantKeyType tenantId)
         {
             if (Cache.CheckExisted(REGIEST_LIST, true))
             {
                 var registerList = Cache.Get<List<KeyInfo<UserKeyType, TenantKeyType>>>(REGIEST_LIST);
                 registerList.Add(new KeyInfo<UserKeyType, TenantKeyType> { Key = key, UserId = userId,TenantId = tenantId });
-                Cache.Update(REGIEST_LIST, registerList);
+                await Cache.UpdateAsync(REGIEST_LIST, registerList);
             }
             else
             {
                 var registerList = new List<KeyInfo<UserKeyType, TenantKeyType>>();
                 registerList.Add(new KeyInfo<UserKeyType, TenantKeyType> { Key = key, UserId = userId, TenantId = tenantId });
-                Cache.Set(REGIEST_LIST, registerList);
+                await Cache.SetAsync(REGIEST_LIST, registerList);
             }
         }
     }
