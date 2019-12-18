@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-<TargetFramework>netcoreapp3.0</TargetFramework>
+<TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>Yoyo.Abp</RootNamespace>
 
@@ -29,15 +29,15 @@
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Abp" Version="5.0.0" />
+    <PackageReference Include="Abp" Version="5.1.0" />
     <PackageReference Include="aliyun-net-sdk-core" Version="1.5.3" />
-    <PackageReference Include="aliyun-net-sdk-vod" Version="2.15.4" />
+    <PackageReference Include="aliyun-net-sdk-vod" Version="2.15.9" />
     <PackageReference Include="aliyun.oss.sdk.core" Version="2.5.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.0" />
   </ItemGroup>
  
 

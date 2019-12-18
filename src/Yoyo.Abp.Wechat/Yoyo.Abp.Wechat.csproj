@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-<TargetFramework>netcoreapp3.0</TargetFramework><GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+<TargetFramework>netcoreapp3.1</TargetFramework><GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>Yoyo.Abp</RootNamespace>
 
     <!--Nuget包配置信息-->
@@ -34,11 +34,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.0" />
-    <PackageReference Include="Senparc.CO2NET" Version="1.0.102" />
-    <PackageReference Include="Senparc.Weixin" Version="6.6.102" />
-    <PackageReference Include="Senparc.Weixin.Cache.Redis" Version="2.7.102" />
+    <PackageReference Include="Abp" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.0" />
+    <PackageReference Include="Senparc.CO2NET" Version="1.0.103" />
+    <PackageReference Include="Senparc.Weixin" Version="6.6.104.1" />
+    <PackageReference Include="Senparc.Weixin.Cache.Redis" Version="2.7.104" />
   </ItemGroup>
 
   <ItemGroup>
