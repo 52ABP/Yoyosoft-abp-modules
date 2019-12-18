@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-<TargetFramework>netcoreapp3.0</TargetFramework><GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+<TargetFramework>netcoreapp3.1</TargetFramework><GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>Yoyo.Abp</RootNamespace>
 
     <!--Nuget包配置信息-->
@@ -33,8 +33,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="5.0.0" />
-    <PackageReference Include="Senparc.Weixin.Work" Version="3.7.102" />
+    <PackageReference Include="Abp" Version="5.1.0" />
+    <PackageReference Include="Senparc.Weixin.Work" Version="3.7.104" />
   </ItemGroup>
 
 </Project>
